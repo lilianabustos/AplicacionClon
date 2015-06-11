@@ -45,7 +45,14 @@ foreach ($resultado as $fila) {
     direccion=".$fila['direccion']."&
     categoria=".$fila['categoria']."&
     contenido=".$fila['contenido']."&
-    valoracion=".$fila['valoracion']."'>Eliminar</a></td></tr>";
+    valoracion=".$fila['valoracion']."'>Eliminar</a></td>
+
+    <td><td><a href ='formularioactualizar.php?
+    titulo=".$fila['titulo']."&
+    direccion=".$fila['direccion']."&
+    categoria=".$fila['categoria']."&
+    contenido=".$fila['contenido']."&
+    valoracion=".$fila['valoracion']."'>Actualizar</a></td></tr>";
 }
 
 //Añadir un registro
@@ -63,7 +70,7 @@ echo"
 </td>
 <td><input type= 'text' name='contenido'></td>
 <td><input type= 'text' name='valoracion'></td>
-<td><input type= 'submit'></td>
+<td><input type= 'submit'></td><td></td>
 
 </tr>
 

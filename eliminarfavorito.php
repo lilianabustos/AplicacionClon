@@ -28,12 +28,11 @@ $resultado= $conexion->exec($consulta);
 $conexion = Null;
 
 //y vuelvo
-// echo '
-// <html>
-//      <head>
-//           <meta http-equiv= "REFRESH" content="0;url=principal.php">
-//      </head>
-
-// </html>
-// ';
+ echo '
+ <html>
+    <head>
+         <meta http-equiv= "REFRESH" content="0;url=principal.php">
+      </head>
+ </html>
+ ';
 ?>

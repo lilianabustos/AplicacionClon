@@ -3,7 +3,7 @@
 //CREAR UNA TABLA DE FAVORITOS-------------------------
 
 //conexion----------------------------
-$conexion = new PDO('sqlite: favoritos.db') or die('ha sido imposible establecer la conexion');
+$conexion = new PDO('sqlite:favoritos.db') or die('ha sido imposible establecer la conexion');
 //crear tabla------------------------------------------
 $consulta = " CREATE TABLE favoritos(
 usuario char(40) Not Null,

@@ -12,7 +12,7 @@ $addcontenido = $_POST['contenido'];
 $addvaloracion = $_POST['valoracion'];
 
 //conexion
-$conexion = new PDO('sqlite: favoritos.db');
+$conexion = new PDO('sqlite:favoritos.db');
 
 //consulta
 $consulta= "INSERT INTO favoritos VALUES ('$usuario','$contrasena','$addtitulo','$adddireccion','$addcategoria','$addcontenido','$addvaloracion')";
