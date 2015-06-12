@@ -39,7 +39,7 @@ usuario char(40) Not Null,
 contrasena char(40) Not Null,
 nombre char(40) Not Null,
 apellido char(40) Not Null,
-permisos Int
+edad Int
 );"; 
 //insertar contenido en la tabla-----------------------
 $resultado= $conexion ->exec($consulta);

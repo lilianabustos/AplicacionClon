@@ -19,5 +19,7 @@
         </td>
       </tr>  
   </form>
+  </table>
+  No eres usuario todavia? Pues pulsa <a href="formularioaltausuario.php">AQUI</a>
   </body>
 </html>
