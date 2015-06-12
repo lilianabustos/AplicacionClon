@@ -13,6 +13,7 @@ direccion char(100) Not Null,
 categoria char(40),
 contenido char(200),
 valoracion Int );";
+//echo $consulta;
 //insertar contenido en la tabla-----------------------
 $resultado= $conexion ->exec($consulta);
 //cerrar la conexion-----------------------------------
@@ -24,7 +25,7 @@ $conexion = new PDO('sqlite: favoritos.db') or die('ha sido imposible establecer
 //preparar
 $consulta= "INSERT INTO favoritos VALUES('jocarsa','jocarsa','Google','www.google.com','tecnologia','este es un buscador muy famoso',10);
 INSERT INTO favoritos VALUES('jocarsa','jocarsa','Jocarsa','www.jocarsa.com','tecnologia','esta es la pagina del video',10);";
-
+echo $consulta;
 //insertar
 $resultado= $conexion ->exec($consulta);
 //cerrar
@@ -39,8 +40,11 @@ usuario char(40) Not Null,
 contrasena char(40) Not Null,
 nombre char(40) Not Null,
 apellido char(40) Not Null,
-edad Int
+edad Int,
+permiso int
+
 );"; 
+echo $consulta;
 //insertar contenido en la tabla-----------------------
 $resultado= $conexion ->exec($consulta);
 //cerrar la conexion-----------------------------------
@@ -59,7 +63,7 @@ echo $consulta;
 
 //CREAR UNA TABLA DE LOGS--------------------------
 //conexion---------------------------------------------
-$conexion = new PDO('sqlite: favoritos.db') or die('ha sido imposible establecer la conexion');
+$conexion = new PDO('sqlite:favoritos.db') or die('ha sido imposible establecer la conexion');
 //crear tabla------------------------------------------
 $consulta= "CREATE logs usuarios(
 utc Int, 
@@ -80,7 +84,7 @@ $resultado= $conexion ->exec($consulta);
 //$conexion->close();
 //CONTENIDO DE PRUEBA PARA LA TABLA USUARIOS-----------
 //establecer
-$conexion = new PDO('sqlite: favoritos.db') or die('ha sido imposible establecer la conexion');
+$conexion = new PDO('sqlite:favoritos.db') or die('ha sido imposible establecer la conexion');
 //preparar
 $consulta= "INSERT INTO usuarios VALUES(00000,2015,02,07,21,03,08,'127.0.0.01','26','chrome','liliana','liliana');";
 

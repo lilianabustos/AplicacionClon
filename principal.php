@@ -9,7 +9,7 @@ echo "Tu Usuario es:".$_SESSION['usuario']."<br/>Tu Contrasena es:".$_SESSION['c
 $conexion = new PDO('sqlite:favoritos.db');
 
 //ESTABLECER una consulta
-$consulta= "SELECT * FROM favoritos";
+$consulta= "SELECT * FROM favoritos WHERE usuario='".$_SESSION['usuario']."' AND contrasena='".$_SESSION['contrasena']."';";
 
 //ejecutar consulta
 $resultado= $conexion->query($consulta);
