@@ -32,7 +32,7 @@ $resultado= $conexion ->exec($consulta);
 
 //CREAR UNA TABLA DE USUARIOS--------------------------
 //conexion---------------------------------------------
-$conexion = new PDO('sqlite: favoritos.db') or die('ha sido imposible establecer la conexion');
+$conexion = new PDO('sqlite:favoritos.db') or die('ha sido imposible establecer la conexion');
 //crear tabla------------------------------------------
 $consulta="CREATE TABLE usuarios(
 usuario char(40) Not Null,
@@ -47,12 +47,13 @@ $resultado= $conexion ->exec($consulta);
 //$conexion->close();
 //CONTENIDO DE PRUEBA PARA LA TABLA USUARIOS-----------
 //establecer
-$conexion = new PDO('sqlite: favoritos.db') or die('ha sido imposible establecer la conexion');
+$conexion = new PDO('sqlite:favoritos.db') or die('ha sido imposible establecer la conexion');
 //preparar
-$consulta= "INSERT INTO usuarios VALUES('liliana','liliana','silvia liliana','bustos gutierrez','26',1);";
+$consulta= "INSERT INTO usuarios VALUES('liliana','liliana','silvia liliana','bustos gutierrez',1);";
 
 //insertar
 $resultado= $conexion ->exec($consulta);
+echo $consulta;
 //cerrar
 //$conexion->close();
 
