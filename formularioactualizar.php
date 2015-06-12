@@ -16,35 +16,33 @@ $valoracion= $_GET['valoracion'];
 //crear conexion
 $conexion = new PDO('sqlite:favoritos.db');
 
-$consulta=" SELECT * FROM favoritos WHERE usuario=".$usuario."'AND contrasena='".$contrasena."'AND categoria='".$categoria."'AND contenido='".$contenido."'AND valoracion'".$valoracion."";
-
-// select * from favoritos where usuario="liliana" and contrasena="liliana" and categoria= "personal" and contenido="liliana" and valoracion="liliana";
+//me falta cuadrar esta consulta para filtrarla
+// $consulta="SELECT * FROM favoritos WHERE usuario='".$usuario."'AND contrasena='".$contrasena."'AND titulo='".$titulo."'AND direccion='".$direccion."'AND categoria='".$categoria."'AND contenido='".$contenido."'AND valoracion='".$valoracion."";
+ $consulta="SELECT * FROM favoritos";
 
 $resultado = $conexion->query($consulta);
 
-var_dump($resultado);
-
 echo "
-<table border =1 width= 100%>
+<table border =1 width=100%>
 <tr>
     <td>titulo</td>
     <td>direccion</td>
     <td>categoria</td>
-    <td>comentario</td>
+    <td>contenido</td>
     <td>valoracion</td>
     <td></td>
 </tr>
 
 ";
 
-
 foreach ($resultado as $fila) {
-echo "
 
+echo "
 <tr><form action='actualizarfavorito.php' method='post'>
     <td><input type = 'text' name = 'titulo' value ='".$fila['titulo']."'></td>
-    <td><input type = 'text' name = 'direccion' value ='".$fila['direccion']."'></td>
-    <td><select name='categoria'>
+    <td><input type = 'text' name = 'direccion' value ='".$fila['direccion']."'></td>    
+    <td>
+       <select name='categoria'>
            <option value = 'salud'>salud</option>
            <option value = 'trabajo'>trabajo</option>
            <option value = 'hobby'>hobby</option>
@@ -66,7 +64,8 @@ echo "
 
 
 echo "</table>";
-var_dump($resultado);
+
+$_SESSION['titulo']= $titulo;
 //cerramos la conexion
 $conexion = Null;
 

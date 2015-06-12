@@ -35,11 +35,13 @@ echo"
 ";
 
 foreach ($resultado as $fila) {
-    echo "<tr><td>".$fila['titulo']."</td>
-    <td>".$fila['direccion']."</td>
-    <td>".$fila['categoria']."</td>
-    <td>".$fila['contenido']."</td>
-    <td>".$fila['valoracion']."</td>
+    echo "
+    <tr>
+        <td>".$fila['titulo']."</td>
+        <td>".$fila['direccion']."</td>
+        <td>".$fila['categoria']."</td>
+        <td>".$fila['contenido']."</td>
+        <td>".$fila['valoracion']."</td>
     <td><a href ='eliminarfavorito.php?
     titulo=".$fila['titulo']."&
     direccion=".$fila['direccion']."&
@@ -47,12 +49,15 @@ foreach ($resultado as $fila) {
     contenido=".$fila['contenido']."&
     valoracion=".$fila['valoracion']."'>Eliminar</a></td>
 
-    <td><td><a href ='formularioactualizar.php?
-    titulo=".$fila['titulo']."&
-    direccion=".$fila['direccion']."&
-    categoria=".$fila['categoria']."&
-    contenido=".$fila['contenido']."&
-    valoracion=".$fila['valoracion']."'>Actualizar</a></td></tr>";
+    <td>
+    <td><a href ='formularioactualizar.php?
+        titulo=".$fila['titulo']."&
+        direccion=".$fila['direccion']."&
+        categoria=".$fila['categoria']."&
+        contenido=".$fila['contenido']."&
+        valoracion=".$fila['valoracion']."'>Actualizar</a>
+    </td>
+    </tr>";
 }
 
 //Añadir un registro
