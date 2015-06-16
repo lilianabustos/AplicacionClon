@@ -16,7 +16,7 @@ $conexion = new PDO('sqlite:favoritos.db');
 3.Usuario registrado
 4.Usuario invitado
 */
-$consulta= "INSERT INTO usuarios VALUES ('$usuario','$contrasena','$nombre','$apellido','$edad',3)";
+$consulta= "INSERT INTO usuarios VALUES ('$usuario','$contrasena','$nombre','$apellido','$edad',1)";
 echo $consulta;
 //ejecutar
 $resultado = $conexion->exec($consulta);
