@@ -2,6 +2,9 @@
 
 session_start();
 
+$codigo= $_SESSION['permiso'];
+if($codigo ==1){
+
 echo "Tu Usuario es:".$_SESSION['usuario']."<br/>Tu Contrasena es:".$_SESSION['contrasena']; 
 
 
@@ -82,4 +85,5 @@ echo"
 echo "</table>";
 //cerramos la conexion
 $conexion = Null;
+}else{echo"TU NO ERES ADMINISTRADOR";}
 ?>

@@ -9,7 +9,7 @@ echo "Tu Usuario es:".$_SESSION['usuario']."<br/>Tu Contrasena es:".$_SESSION['c
 $conexion = new PDO('sqlite:favoritos.db');
 
 //ESTABLECER una consulta
-$consulta= "SELECT * FROM favoritos WHERE usuario='".$_SESSION['usuario']."' AND contrasena='".$_SESSION['contrasena']."';";
+$consulta= "SELECT * FROM favoritos WHERE usuario='".$_SESSION['usuario']."' AND contrasena='".$_SESSION['contrasena']."'";
 
 //ejecutar consulta
 $resultado= $conexion->query($consulta);
@@ -83,5 +83,37 @@ echo"
 
 echo "</table>";
 //cerramos la conexion
+$conexion = Null;
+
+////////Socializao///////////////////////////////////////////////////////////////////
+
+echo "Algunos link que quiza te puedan interesar";
+
+$conexion = new PDO('sqlite:favoritos.db');
+$consulta = "SELECT * FROM favoritos ORDER BY RANDOM() LIMIT 3;";
+$resultado= $conexion->query($consulta);
+echo "
+<table border=1 width=100%>
+<tr>
+     <td>titulo</td>
+     <td>direccion</td>
+     <td>categoria</td>
+     <td>contenido</td>
+     <td>valoracion</td>
+</tr>
+
+
+";
+foreach ($resultado as $fila) {
+    echo "
+    <tr>
+        <td>".$fila['titulo']."</td>
+        <td>".$fila['direccion']."</td>
+        <td>".$fila['categoria']."</td>
+        <td>".$fila['contenido']."</td>
+        <td>".$fila['valoracion']."</td>
+   
+    </tr>";
+}
 $conexion = Null;
 ?>

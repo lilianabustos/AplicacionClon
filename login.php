@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //obtener variables
 $usuario = $_POST['usuario'];
 $contrasena = $_POST['contrasena'];
@@ -15,16 +15,19 @@ $resultado= $conexion->query($consulta);
 
 //repasar loos resultados
 foreach ($resultado as $fila){
+
 	$usuariobasedatos= $fila['usuario'];
 	$contrasenabasedatos= $fila['contrasena'];
+  $permisosenbase= $fila['permiso'];
 
 	if($usuario==$usuariobasedatos & $contrasena==$contrasenabasedatos){
 
        //si el resultado es positivo entonces asignar
      $_SESSION['usuario']=$usuario; 
      $_SESSION['contrasena']=$contrasena; 
+     $_SESSION['permiso']=$permisosenbase; 
 
-     echo'
+      echo'
       <html>
           <head>
               <meta http-equiv= "REFRESH" content="0;url=principal.php">
