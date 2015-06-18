@@ -42,6 +42,7 @@ foreach ($resultado as $fila) {
         <td>".$fila['categoria']."</td>
         <td>".$fila['contenido']."</td>
         <td>".$fila['valoracion']."</td>
+
     <td><a href ='eliminarfavorito.php?
     titulo=".$fila['titulo']."&
     direccion=".$fila['direccion']."&
@@ -85,12 +86,13 @@ echo "</table>";
 //cerramos la conexion
 $conexion = Null;
 
-////////Socializao///////////////////////////////////////////////////////////////////
+////////Socializa///////////////////////////////////////////////////////////////////
+function muestracategoria($damecategoria){
 
-echo "Algunos link que quiza te puedan interesar";
+echo "Algunos links de la categoria ".$damecategoria." que quiza te puedan interesar";
 
 $conexion = new PDO('sqlite:favoritos.db');
-$consulta = "SELECT * FROM favoritos ORDER BY RANDOM() LIMIT 3;";
+$consulta = "SELECT * FROM favoritos WHERE usuario !='".$_SESSION['usuario']."' AND categoria= '".$damecategoria."' ORDER BY RANDOM() LIMIT 3;";
 $resultado= $conexion->query($consulta);
 echo "
 <table border=1 width=100%>
@@ -115,5 +117,12 @@ foreach ($resultado as $fila) {
    
     </tr>";
 }
+echo "</table>";
 $conexion = Null;
+}
+muestracategoria("salud");
+muestracategoria("trabajo");
+muestracategoria("personal");
+muestracategoria("hobby");
+muestracategoria("otros");
 ?>
