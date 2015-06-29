@@ -48,7 +48,7 @@ echo $consulta;
 //insertar contenido en la tabla-----------------------
 $resultado= $conexion ->exec($consulta);
 //cerrar la conexion-----------------------------------
-//$conexion->close();
+$conexion = Null;
 //CONTENIDO DE PRUEBA PARA LA TABLA USUARIOS-----------
 //establecer
 $conexion = new PDO('sqlite:favoritos.db') or die('ha sido imposible establecer la conexion');
@@ -59,13 +59,13 @@ $consulta= "INSERT INTO usuarios VALUES('liliana','liliana','silvia liliana','bu
 $resultado= $conexion ->exec($consulta);
 echo $consulta;
 //cerrar
-//$conexion->close();
+$conexion = Null;
 
 //CREAR UNA TABLA DE LOGS--------------------------
 //conexion---------------------------------------------
 $conexion = new PDO('sqlite:favoritos.db') or die('ha sido imposible establecer la conexion');
 //crear tabla------------------------------------------
-$consulta= "CREATE logs usuarios(
+$consulta= "CREATE TABLE logs(
 utc Int, 
 anio Int,
 mes Int,
@@ -86,12 +86,12 @@ $resultado= $conexion ->exec($consulta);
 //establecer
 $conexion = new PDO('sqlite:favoritos.db') or die('ha sido imposible establecer la conexion');
 //preparar
-$consulta= "INSERT INTO usuarios VALUES(00000,2015,02,07,21,03,08,'127.0.0.01','26','chrome','liliana','liliana');";
+$consulta= "INSERT INTO logs VALUES(00000,2015,02,07,21,03,08,'127.0.0.01','chrome','liliana','liliana');";
 
 //insertar
 $resultado= $conexion ->exec($consulta);
 //cerrar
-//$conexion->close();
+$conexion = Null;
 
 
 
