@@ -3,11 +3,11 @@
 //incluir para que cada vez que pase por peincipal se ejecute log.php
 include("log.php");
 
-session_start();
+//session_start();
 
 echo "Tu Usuario es:".$_SESSION['usuario']."<br/>Tu Contrasena es:".$_SESSION['contrasena']; 
 
-
+echo "<br/>Pulsa <a href='unlog.php'>AQUI</a> para cerrar tu session<br/>";
 //crear conexion
 $conexion = new PDO('sqlite:favoritos.db');
 
