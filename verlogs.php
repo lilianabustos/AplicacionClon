@@ -7,6 +7,171 @@ if($codigo ==1){
 
 echo "Tu Usuario es:".$_SESSION['usuario']."<br/>Tu Contrasena es:".$_SESSION['contrasena']; 
 
+//CREAR RESUMEN DE VISITAS
+
+$conexion = new PDO('sqlite:favoritos.db');
+$consulta= "SELECT * FROM logs";
+$resultado= $conexion->query($consulta);
+
+$hora0=0;  
+$hora1=0; 
+$hora2=0;
+$hora3=0; 
+$hora4=0; 
+$hora5=0;
+$hora6=0; 
+$hora7=0; 
+$hora8=0;
+$hora9=0; 
+$hora10=0; 
+$hora11=0;
+$hora12=0; 
+$hora13=0; 
+$hora14=0;
+$hora15=0; 
+$hora16=0; 
+$hora17=0;
+$hora18=0; 
+$hora19=0; 
+$hora20=0;
+$hora21=0; 
+$hora22=0; 
+$hora23=0;
+$hora24=0;
+
+foreach ($resultado as $fila)
+{    
+    if($fila['hora']==0){
+        
+        $hora0++;
+    }
+    if($fila['hora']==1){
+        
+        $hora1++;
+    }
+    if($fila['hora']==2){
+        
+        $hora2++;
+    }
+    if($fila['hora']==3){
+        
+        $hora3++;
+    }
+    if($fila['hora']==4){
+        
+        $hora4++;
+    }
+    if($fila['hora']==5){
+        
+        $hora5++;
+    }
+    if($fila['hora']==6){
+        
+        $hora6++;
+    }
+    if($fila['hora']==7){
+        
+        $hora7++;
+    }
+    if($fila['hora']==8){
+        
+        $hora8++;
+    }
+    if($fila['hora']==9){
+        
+        $hora9++;
+    }
+    if($fila['hora']==10){
+        
+        $hora10++;
+    }
+     if($fila['hora']==11){
+        
+        $hora11++;
+    }
+    if($fila['hora']==12){
+        
+        $hora12++;
+    }
+    if($fila['hora']==13){
+        
+        $hora13++;
+    }
+     if($fila['hora']==14){
+        
+        $hora14++;
+    }
+    if($fila['hora']==15){
+        
+        $hora15++;
+    }
+    if($fila['hora']==16){
+        
+        $hora16++;
+    }
+     if($fila['hora']==17){
+        
+        $hora17++;
+    }
+    if($fila['hora']==18){
+        
+        $hora18++;
+    }
+    if($fila['hora']==19){
+        
+        $hora19++;
+    }
+     if($fila['hora']==20){
+        
+        $hora20++;
+    }
+    if($fila['hora']==21){
+        
+        $hora21++;
+    }
+    if($fila['hora']==22){
+        
+        $hora22++;
+    }
+     if($fila['hora']==23){
+        
+        $hora23++;
+    }
+    if($fila['hora']==24){
+        
+        $hora24++;
+    }
+}
+
+    echo "Visitas en la hora 0:".$hora0."<br/>";
+    echo "Visitas en la hora 1:".$hora1."<br/>";
+    echo "Visitas en la hora 2:".$hora2."<br/>";
+    echo "Visitas en la hora 3:".$hora3."<br/>";
+    echo "Visitas en la hora 4:".$hora4."<br/>";
+    echo "Visitas en la hora 5:".$hora5."<br/>";
+    echo "Visitas en la hora 6:".$hora6."<br/>";
+    echo "Visitas en la hora 7:".$hora7."<br/>";
+    echo "Visitas en la hora 8:".$hora8."<br/>";
+    echo "Visitas en la hora 9:".$hora9."<br/>";
+    echo "Visitas en la hora 10:".$hora10."<br/>";
+    echo "Visitas en la hora 11:".$hora11."<br/>";
+    echo "Visitas en la hora 12:".$hora12."<br/>";
+    echo "Visitas en la hora 13:".$hora13."<br/>";
+    echo "Visitas en la hora 14:".$hora14."<br/>";
+    echo "Visitas en la hora 15:".$hora15."<br/>";
+    echo "Visitas en la hora 16:".$hora16."<br/>";
+    echo "Visitas en la hora 17:".$hora17."<br/>";
+    echo "Visitas en la hora 18:".$hora18."<br/>";
+    echo "Visitas en la hora 19:".$hora19."<br/>";
+    echo "Visitas en la hora 20:".$hora20."<br/>";
+    echo "Visitas en la hora 21:".$hora21."<br/>";
+    echo "Visitas en la hora 22:".$hora22."<br/>";
+    echo "Visitas en la hora 23:".$hora23."<br/>";
+    echo "Visitas en la hora 24:".$hora24."<br/>";
+
+
+$conexion = Null;
+
 
 //crear conexion
 $conexion = new PDO('sqlite:favoritos.db');
