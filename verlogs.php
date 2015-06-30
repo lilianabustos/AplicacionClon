@@ -143,6 +143,8 @@ foreach ($resultado as $fila)
     }
 }
 
+//comentamos este porque ya lo tenemos graficado
+    /*
     echo "Visitas en la hora 0:".$hora0."<br/>";
     echo "Visitas en la hora 1:".$hora1."<br/>";
     echo "Visitas en la hora 2:".$hora2."<br/>";
@@ -168,7 +170,75 @@ foreach ($resultado as $fila)
     echo "Visitas en la hora 22:".$hora22."<br/>";
     echo "Visitas en la hora 23:".$hora23."<br/>";
     echo "Visitas en la hora 24:".$hora24."<br/>";
+    */
 
+$anchura= "20";
+$multiplicador= "5";
+$desface="1";
+echo'
+
+<br/>VISITAS DURANTE EL DIA DE HOY:
+
+<table border=1 valign="bottom">
+ <tr valign="bottom>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora0+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora1+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora2+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora3+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora4+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora5+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora6+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora7+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora8+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora9+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora10+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora11+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora12+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora13+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora14+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora15+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora16+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora17+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora18+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora19+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora20+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora21+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora22+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora23+$desface)).'></td>
+ <td><img src= "square.png" width='.$anchura.' height= '.($multiplicador*($hora24+$desface)).'></td>
+ </tr>
+
+ <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+    <td>6</td>
+    <td>7</td>
+    <td>8</td>
+    <td>9</td>
+    <td>10</td>
+    <td>11</td>
+    <td>12</td>
+    <td>13</td>
+    <td>14</td>
+    <td>15</td>
+    <td>16</td>
+    <td>17</td>
+    <td>18</td>
+    <td>19</td>
+    <td>20</td>
+    <td>21</td>
+    <td>22</td>
+    <td>23</td>
+    <td>24</td>
+ </tr>
+</table>
+
+
+';
 
 $conexion = Null;
 
